@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>qzb计算器</title>
+    <script>
+        console.log('**********************');
+        console.log('作者tzl');
+        console.log('**********************');
+    </script>
+    <style>
+        input::-webkit-input-placeholder {
+            /*Webkit browsers 谷歌*/
+            color: rgba(164, 164, 164, 1);
+            font-size: 18px;
+        }
+
+        input:-moz-placeholder {
+            /*Mozilla Firefox 4 to 8 火狐*/
+            color: rgba(164, 164, 164, 1);
+            font-size: 18px;
+        }
+
+        input::moz-placeholder {
+            /*Mozilla Firefox 19+ 火狐*/
+            color: rgba(164, 164, 164, 1);
+            font-size: 18px;
+        }
+
+        input:-ms-input-placeholder {
+            /*Internet Explorer 10+ IE10以上*/
+            color: rgba(164, 164, 164, 1);
+            font-size: 18px;
+        }
+
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        body {
+            /* background-color: #cccccc; */
+        }
+
+        .bear {
+            position: absolute;
+            z-index: 3;
+            top: 200px;
+            width: 200px;
+            height: 100px;
+            background: url(bear.png) no-repeat;
+            animation: bear 1s steps(8) infinite, move 5s forwards;
+        }
+
+        .bg1 {
+            position: absolute;
+            z-index: 2;
+            height: 336px;
+            width: 1920px;
+            background: url(bg1.png);
+            animation: bg1 16s linear infinite backwards;
+        }
+
+        .bg2 {
+            position: absolute;
+            z-index: 1;
+            height: 336px;
+            width: 1920px;
+            background: url(bg2.png);
+            animation: bg1 24s linear infinite backwards;
+        }
+
+        @keyframes bear {
+            0% {
+                background-position: 0px 0px;
+            }
+
+            100% {
+                background-position: -1600px 0px;
+            }
+        }
+
+        @keyframes move {
+            0% {
+                left: -200px;
+            }
+
+            100% {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        @keyframes bg1 {
+            0% {
+                background-position: 0px 0px;
+            }
+
+            100% {
+                background-position: -3840px 0px;
+            }
+        }
+
+        @keyframes bg2 {
+            0% {
+                background-position: 0px 0px;
+            }
+
+            100% {
+                background-position: -3840px 0px;
+            }
+        }
+
+        .sky {
+            height: 336px;
+            background-color: skyblue;
+
+        }
+
+        /* 主体 */
+        .middle {
+            height: 744px;
+            background-color: rgb(242, 245, 247);
+        }
+
+        .formself {
+            position: relative;
+            text-align: center;
+            width: 600px;
+            margin: 0px auto;
+        }
+
+        .formself :focus {
+            outline: none;
+        }
+
+        .formself ul li {
+            padding-top: 60px;
+        }
+
+        /* .formself ul li label {
+            padding: 0px 20px;
+            margin-left: 19px;
+            font-size: 20px;
+            font-weight: 700;
+            color: #000000;
+        } */
+        .formself ul li .inp {
+            width: 400px;
+            height: 50px;
+            margin: 30px;
+            border-radius: 25px;
+            border: 2px solid skyblue;
+            /* padding-left: 30px; */
+            /* text-indent: 30px; */
+            font-size: 18px;
+            font-weight: 700;
+            text-align: center;
+            line-height: 50px;
+            transition: all 2s;
+        }
+        .formself .bingo {
+            position: absolute;
+            left: 50%;
+            top: 400px;
+            transform: translateX(-50%);            
+            width: 160px;
+            height: 160px;
+            border-radius: 100%;
+            border: 0px;
+            background-color: skyblue;
+            font-size: 24px;
+            color: #ffffff;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 2s;
+
+        }
+        .inp:hover {
+            border: 0px solid #ffffff;
+            box-shadow: 0px 0px 30px rgba(3, 81, 250, 0.7);
+        }
+        .bingo:hover {
+            font-size: 26px;
+            box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.7);
+        }
+        /* .formself .bingo::after {
+            content: '生成';
+            transform: translate(600px 600px);
+            width: 160px;
+            height: 160px;
+            border-radius: 100%;
+            background-color: skyblue;
+            
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="top">
+        <div class="bear"></div>
+        <div class="bg1"></div>
+        <div class="bg2"></div>
+        <div class="sky"></div>
+    </div>
+    <div class="middle">
+        <div class="formAre">
+            <form action="" method="post" class="formself">
+                <ul>
+                    <li>
+                        <!-- <label for="tab1"></label> -->
+                        <input type="text" class="inp" placeholder="输入题目数量">
+                    </li>
+                    <li>
+                        <!-- <label for="tab2"></label> -->
+                        <input type="text" class="inp" placeholder="输入生成数字范围">
+                    </li>
+                    <input type="submit" value="生成" class="bingo">
+                </ul>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
