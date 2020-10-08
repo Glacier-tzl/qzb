@@ -61,8 +61,8 @@
         .bg1 {
             position: absolute;
             z-index: 2;
-            height: 336px;
-            width: 1920px;
+            height: 33.6vh;
+            width: 100vw;
             background: url(bg1.png);
             animation: bg1 16s linear infinite backwards;
         }
@@ -70,8 +70,8 @@
         .bg2 {
             position: absolute;
             z-index: 1;
-            height: 336px;
-            width: 1920px;
+            height: 33.6vh;
+            width: 100vw;
             background: url(bg2.png);
             animation: bg1 24s linear infinite backwards;
         }
@@ -118,15 +118,15 @@
         }
 
         .sky {
-            height: 336px;
+            height: 33.6vh;
             background-color: skyblue;
 
         }
 
         /* 主体 */
         .middle {
-            height: 744px;
-            background-color: rgb(242, 245, 247);
+            height: 66vh;
+            background-color: #e6eef0;
         }
 
         .formself {
@@ -165,31 +165,49 @@
             line-height: 50px;
             transition: all 2s;
         }
+
         .formself .bingo {
             position: absolute;
             left: 50%;
             top: 400px;
-            transform: translateX(-50%);            
+            transform: translateX(-50%);
             width: 160px;
             height: 160px;
             border-radius: 100%;
             border: 0px;
-            background-color: skyblue;
+            background-color: #e6eef0;
             font-size: 24px;
-            color: #ffffff;
+            color: skyblue;
             font-weight: 700;
             cursor: pointer;
             transition: all 2s;
 
         }
+
         .inp:hover {
             border: 0px solid #ffffff;
             box-shadow: 0px 0px 30px rgba(3, 81, 250, 0.7);
         }
+
         .bingo:hover {
             font-size: 26px;
             box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.7);
+            background-color: skyblue;
+            color: #ffffff;
         }
+
+        a {
+            width: 150px;
+            display: inline-block;
+            color: skyblue;
+            text-decoration: none;
+            position: relative;
+            top: 150px;
+            left: 1700px;
+            font-weight: 700;
+            font-size: 24px;
+        }
+
         /* .formself .bingo::after {
             content: '生成';
             transform: translate(600px 600px);
@@ -224,6 +242,7 @@
                     <input type="submit" value="生成" class="bingo">
                 </ul>
             </form>
+            <a href="file.html" class="file">CLICK TO UPLOAD FILES</a>
         </div>
     </div>
 </body>
